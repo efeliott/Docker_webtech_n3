@@ -1,0 +1,11 @@
+# Utilisez l'image de PHP avec Apache
+FROM php:8.0-apache
+
+# Copiez les fichiers de l'application dans le conteneur
+COPY . /var/www/html/
+
+# Exposez le port 80
+EXPOSE 80
+
+# Lorsque le conteneur démarre, lancez Apache en arrière-plan
+CMD ["apache2-foreground"]
